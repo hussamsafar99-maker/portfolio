@@ -195,6 +195,24 @@ body.rec #rec,body.rec nav .cta{opacity:0}
 #lb{position:fixed;inset:0;z-index:95;background:rgba(0,0,0,.92);display:none;place-items:center;cursor:zoom-out;padding:20px}
 #lb.on{display:grid}#lb img{max-width:94vw;max-height:90vh;border-radius:14px;box-shadow:0 0 80px rgba(212,175,55,.25)}
 @media(max-width:900px){.photos{columns:3}}@media(max-width:620px){.photos{columns:2}}
+/* menu stories */
+.strips{display:grid;gap:14px;margin-bottom:22px}
+.strips .sx{border-radius:16px;overflow:hidden;border:1px solid var(--line);cursor:zoom-in;position:relative;background:var(--bg2)}
+.strips .sx img{width:100%;display:block;transition:transform .8s}
+.strips .sx:hover{border-color:var(--gold)}.strips .sx:hover img{transform:scale(1.03)}
+.strips .sx span{position:absolute;left:14px;top:12px;font:500 10px 'Orbitron';letter-spacing:.14em;color:var(--gold2);background:#000b;border:1px solid var(--gold);padding:4px 10px;border-radius:6px}
+.strips .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mrow{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px;align-items:start}
+.mvid{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line);aspect-ratio:9/16;background:#000}
+.mvid:hover{border-color:var(--gold)}
+.mvid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.mtag{position:absolute;left:14px;top:14px;font:500 10px 'Orbitron';letter-spacing:.14em;color:var(--gold2);background:#000b;border:1px solid var(--gold);padding:4px 10px;border-radius:6px;z-index:2}
+.msing{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.msing .sg{border-radius:14px;overflow:hidden;border:1px solid var(--line);cursor:zoom-in;aspect-ratio:9/16;background:var(--bg2)}
+.msing .sg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s}
+.msing .sg:hover{border-color:var(--gold)}.msing .sg:hover img{transform:scale(1.06)}
+@media(max-width:860px){.mrow{grid-template-columns:1fr}.msing{grid-template-columns:repeat(4,1fr)}.strips .two{grid-template-columns:1fr}}
+@media(max-width:520px){.msing{grid-template-columns:repeat(2,1fr)}}
 /* podcast */
 .cl-note{max-width:740px;color:var(--mute);font-size:18px;margin:-22px 0 36px}
 .cl-note b{color:var(--gold2);font-weight:600}
@@ -253,7 +271,7 @@ body.rec #rec,body.rec nav .cta{opacity:0}
 <canvas id="sp"></canvas><div id="prog"></div><div id="cd"></div><div id="cr"><b></b></div>
 <div id="ld"><div class="lh l"></div><div class="lh r"></div><div class="c"><div class="nm">HUSSAM SAFAR</div><div class="n" id="ldn">0</div><div class="b"><i id="ldb"></i></div><small>AI VIDEO EDITOR — PORTFOLIO</small></div></div>
 
-<nav id="nav"><b id="logo"></b><ul><li><a href="#services">Services</a></li><li><a href="#works">Work</a></li><li><a href="#shoot">Photography</a></li><li><a href="#podcast">Podcast</a></li><li><a href="#clients">Clients</a></li><li><a href="#biz">AI Builder</a></li><li><a href="#process">Process</a></li></ul><a class="cta" href="#contact">Get in touch</a></nav>
+<nav id="nav"><b id="logo"></b><ul><li><a href="#services">Services</a></li><li><a href="#works">Work</a></li><li><a href="#shoot">Photography</a></li><li><a href="#menu">Menu</a></li><li><a href="#podcast">Podcast</a></li><li><a href="#clients">Clients</a></li><li><a href="#biz">AI Builder</a></li><li><a href="#process">Process</a></li></ul><a class="cta" href="#contact">Get in touch</a></nav>
 
 <header class="hero" id="top"><div class="wrap">
  <div>
@@ -311,6 +329,16 @@ body.rec #rec,body.rec nav .cta{opacity:0}
  <p class="cl-note rv">A complete menu shoot for Mandi Al Deera, <b>shot and retouched by me</b> and ready for printed menus, social media and ads. Click any image to enlarge.</p>
  <div class="filters rv" id="pfilters"></div>
  <div class="photos" id="photos"></div>
+</div></section>
+
+<section class="blk" id="menu"><div class="bgword">MENU</div><div class="wrap">
+ <div class="eyebrow" data-scr>MENU DESIGN SYSTEM</div><h2 class="split">A story for <i>every dish</i></h2>
+ <p class="cl-note rv">A complete set of menu stories for Mandi Al Deera, designed per category: <b>drinks, local meat, grills, starters and hot dishes</b>, each with its own colour world and the same brand system. Click any image to enlarge.</p>
+ <div class="strips" id="strips"></div>
+ <div class="mrow">
+  <div class="mvid rv" data-cur="PLAY"><video src="media/videos/md_motion_makhmoud.mp4" poster="media/videos/md_motion_makhmoud.jpg" muted loop playsinline preload="metadata"></video><div class="mtag">MOTION VERSION</div></div>
+  <div class="msing" id="msing"></div>
+ </div>
 </div></section>
 
 <section class="blk" id="podcast"><div class="bgword">PODCAST</div><div class="wrap">
@@ -494,6 +522,13 @@ function drawPh(c){$('#photos').innerHTML=PHOTOS.filter(p=>c===ALL||p[2]===c).ma
  $$('.ph').forEach(el=>el.onclick=()=>{$('#lb img').src=el.querySelector('img').src;$('#lb').classList.add('on')})}
 $('#pfilters').onclick=e=>{if(e.target.dataset.c){$$('#pfilters button').forEach(b=>b.classList.remove('on'));e.target.classList.add('on');drawPh(e.target.dataset.c)}};
 drawPh(ALL);
+/* menu stories */
+const MENU_STRIPS=[["overview","Drinks and hot dishes"],["meat","Local meat"],["grills","Grills"],["drinks3","Drinks"]];
+const MENU_SINGLES=[["fries","Fries"],["hummus","Hummus"],["alfahsa","Alfahsa"],["salta","Salta"],["madhbi","Madhbi chicken"],["madfoon","Madfoon chicken"],["boorma","Lamb boorma"],["sambosa","Sambosa"]];
+$('#strips').innerHTML=`<div class="sx rv" data-cur="ZOOM"><img src="media/menu/${MENU_STRIPS[0][0]}.jpg" alt="${MENU_STRIPS[0][1]}" loading="lazy"><span>${MENU_STRIPS[0][1].toUpperCase()}</span></div>`+MENU_STRIPS.slice(1,3).map(s=>`<div class="sx rv" data-cur="ZOOM"><img src="media/menu/${s[0]}.jpg" alt="${s[1]}" loading="lazy"><span>${s[1].toUpperCase()}</span></div>`).join('');
+$('#msing').innerHTML=MENU_SINGLES.map(s=>`<div class="sg rv" data-cur="ZOOM"><img src="media/menu/${s[0]}.jpg" alt="${s[1]}" loading="lazy"></div>`).join('');
+$$('.sx img,.sg img').forEach(im=>im.parentElement.onclick=()=>{$('#lb img').src=im.src;$('#lb').classList.add('on')});
+{const mv=$('.mvid video');$('.mvid').onmouseenter=()=>mv.play();$('.mvid').onmouseleave=()=>{mv.pause();mv.currentTime=0}}
 $('#lb').onclick=()=>$('#lb').classList.remove('on');
 addEventListener('keydown',e=>{if(e.key==='Escape')$('#lb').classList.remove('on')});
 $('#steps').insertAdjacentHTML('beforeend',STEPS.map(s=>`<div class="step"><b>${s[0]}</b><h3>${s[1]}</h3><p>${s[2]}</p></div>`).join(''));
