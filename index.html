@@ -6,7 +6,7 @@
 <title>Hussam Safar — AI Video Editor</title>
 <meta name="description" content="Hussam Safar — AI video editor, podcast producer and AI business developer working with brands in the UAE.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&family=Orbitron:wght@500;700&family=Tajawal:wght@300;400;500;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#06060a;--bg2:#0d0d12;--line:#2a2418;--gold:#d4af37;--gold2:#f3d77a;--text:#f2efe6;--mute:#9a9486;--mx:50%;--my:50%}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -15,7 +15,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-s
 body.lock{overflow:hidden}
 @media(pointer:fine){body,a,button{cursor:none}}
 #bg{position:fixed;inset:0;z-index:0;pointer-events:none}
-.glow{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(520px circle at var(--mx) var(--my),rgba(212,175,55,.10),transparent 60%)}
+.glow{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(520px circle at var(--mx) var(--my),rgba(var(--t),.14),transparent 60%)}
 .grain{position:fixed;inset:-50%;z-index:60;pointer-events:none;opacity:.055;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");animation:gr .6s steps(6) infinite}
 @keyframes gr{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
 section,header,footer,nav,.marq{position:relative;z-index:2}
@@ -49,12 +49,12 @@ nav.hide{transform:translateY(-100%)}
 nav b{font:700 18px 'Orbitron',sans-serif;letter-spacing:.12em;color:var(--gold2)}
 nav ul{display:flex;gap:28px;list-style:none;font-size:14px;font-weight:500}
 nav ul a{color:var(--mute);text-decoration:none;position:relative;transition:.3s}
-nav ul a::after{content:"";position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold2);transition:.4s}
+nav ul a::after{content:"";position:absolute;bottom:-3px;inset-inline-start:0;width:0;height:1px;background:var(--gold2);transition:.4s}
 nav ul a:hover{color:var(--gold2)}nav ul a:hover::after{width:100%}
 .cta{border:1px solid var(--gold);color:var(--gold2);padding:9px 22px;border-radius:99px;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.04em;transition:.3s;display:inline-block}
 .cta:hover{background:var(--gold);color:#000}
 /* kinetic text */
-.wd{display:inline-block;overflow:hidden;vertical-align:bottom;padding:0 .02em .14em;margin-right:.26em}
+.wd{display:inline-block;overflow:hidden;vertical-align:bottom;padding:0 .02em .14em;margin-inline-end:.26em}
 .ch{display:inline-block;transform:translateY(112%) rotateX(-80deg);transform-origin:50% 100%;opacity:0;filter:blur(6px);transition:transform 1s cubic-bezier(.2,.8,.1,1),opacity .8s,filter .8s;transition-delay:calc(var(--i)*.028s)}
 .go .ch,.in .ch,.ch.in{transform:none;opacity:1;filter:none}
 .ch.g{color:var(--gold2)}
@@ -66,7 +66,7 @@ nav ul a:hover{color:var(--gold2)}nav ul a:hover::after{width:100%}
 @keyframes sh{to{transform:translateX(120%)}}
 h1{font-family:'Playfair Display',serif;font-size:clamp(50px,8.4vw,112px);line-height:1.02;font-weight:800;letter-spacing:-.01em}
 .role{font-size:21px;color:var(--gold2);margin:18px 0 18px;min-height:38px;font-weight:500}
-.role em{font-style:normal;border-right:2px solid var(--gold2);padding-right:4px;animation:bl .8s infinite}
+.role em{font-style:normal;border-inline-end:2px solid var(--gold2);padding-inline-end:4px;animation:bl .8s infinite}
 @keyframes bl{50%{border-color:transparent}}
 .bio{color:var(--mute);max-width:520px;font-size:17px}
 .btns{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
@@ -232,7 +232,7 @@ body.rec #rec,body.rec nav .cta{opacity:0}
 .cl .av{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font:700 20px 'Orbitron';color:#fff;background:var(--ac,var(--gold));box-shadow:0 0 28px color-mix(in srgb,var(--ac,#d4af37) 55%,transparent);margin-bottom:14px}
 .cl .av.lg{background:#14090d;border:2px solid var(--ac);padding:10px}.cl .av.full{padding:0;overflow:hidden;background:#fff}.cl .av img{width:100%;height:100%;object-fit:contain}
 .cl h3{font-size:19px}
-.cl .hd{font:500 11px 'Orbitron';color:var(--gold2);letter-spacing:.04em}
+.cl .hd{font:500 11px 'Orbitron';color:var(--gold2);letter-spacing:.04em;direction:ltr;text-align:left}
 .cl .kind{color:var(--mute);font-size:13px;margin:6px 0 14px}
 .cl .nums{display:flex;gap:18px;margin-bottom:14px}
 .cl .nums div{font-size:11px;color:var(--mute);letter-spacing:.08em;text-transform:uppercase}
@@ -258,20 +258,39 @@ body.rec #rec,body.rec nav .cta{opacity:0}
 .proj p{color:var(--mute);font-size:15px}
 .proj ul{list-style:none;margin:14px 0 24px}
 .proj li{padding:6px 0;font-size:14px;border-bottom:1px dashed var(--line)}
-.proj li::before{content:"◆";color:var(--gold);margin-right:10px;font-size:9px}
+.proj li::before{content:"◆";color:var(--gold);margin-inline-end:10px;font-size:9px}
 @media(max-width:860px){.projs{grid-template-columns:1fr}}
 @media(max-width:1000px){.services{grid-template-columns:1fr 1fr 1fr}}
 @media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.pw{max-width:420px;margin:30px auto 0}.services,.works{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.steps::before,.steps .ln{display:none}.stats{grid-template-columns:1fr 1fr}nav ul{display:none}}
 @media(max-width:520px){.services,.works,.steps{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.grain,.chip,.phone,.orbit{animation:none}}
+
+/* client colour theme + language toggle + Arabic / RTL */
+:root{--t:212,175,55;--ta:.1}
+#tint{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(1100px circle at 88% 6%,rgba(var(--t),var(--ta)),transparent 62%),radial-gradient(950px circle at 6% 100%,rgba(var(--t),calc(var(--ta)*.75)),transparent 62%)}
+.nr{display:flex;align-items:center;gap:12px}
+.lbtn{background:none;border:1px solid var(--line);color:var(--gold2);padding:8px 16px;border-radius:99px;font:600 12px 'Inter',sans-serif;letter-spacing:.04em;transition:.3s}
+.lbtn:hover{border-color:var(--gold);background:rgba(212,175,55,.1)}
+html[dir=rtl] #prog{transform-origin:right}
+html[dir=rtl] .steps .ln{left:auto;right:6%}
+html[dir=rtl] .cl .hd{text-align:right}
+html[lang=ar] body{font-family:'Tajawal','Inter',sans-serif;line-height:1.85}
+html[lang=ar] :is(h2,.stmt p,.proj h3,.reel .cap h3){font-family:'Amiri',serif;font-weight:700;letter-spacing:0}
+html[lang=ar] h2{line-height:1.4}
+html[lang=ar] .stmt p{line-height:1.45}
+html[lang=ar] .wd{padding:.14em .02em .32em}
+html[lang=ar] :is(.work .t small,.pod small,.stat span,.cl .nums div,.mtag,.sx span,.cue,#rec,.tag,.proj .pb,.reel .lab,.role,.live,.cl .tags span,.filters button,.lbtn,.cta,.btn){letter-spacing:0;text-transform:none;font-family:'Tajawal',sans-serif}
+html[lang=ar] :is(.work .t h4,.pod h4,.card h3,.step h3,.cl h3){font-family:'Tajawal',sans-serif}
+html[lang=ar] .role{font-size:22px}
+html[lang=ar] nav ul{font-size:15px}
 </style>
 </head>
 <body class="lock">
-<canvas id="bg"></canvas><div class="glow"></div><div class="grain"></div>
+<canvas id="bg"></canvas><div class="glow"></div><div id="tint"></div><div class="grain"></div>
 <canvas id="sp"></canvas><div id="prog"></div><div id="cd"></div><div id="cr"><b></b></div>
 <div id="ld"><div class="lh l"></div><div class="lh r"></div><div class="c"><div class="nm">HUSSAM SAFAR</div><div class="n" id="ldn">0</div><div class="b"><i id="ldb"></i></div><small>AI VIDEO EDITOR — PORTFOLIO</small></div></div>
 
-<nav id="nav"><b id="logo"></b><ul><li><a href="#services">Services</a></li><li><a href="#works">Work</a></li><li><a href="#shoot">Photography</a></li><li><a href="#menu">Menu</a></li><li><a href="#podcast">Podcast</a></li><li><a href="#clients">Clients</a></li><li><a href="#biz">AI Builder</a></li><li><a href="#process">Process</a></li></ul><a class="cta" href="#contact">Get in touch</a></nav>
+<nav id="nav"><b id="logo"></b><ul><li><a href="#services" data-i18n="n_services"></a></li><li><a href="#works" data-i18n="n_work"></a></li><li><a href="#shoot" data-i18n="n_photo"></a></li><li><a href="#menu" data-i18n="n_menu"></a></li><li><a href="#podcast" data-i18n="n_podcast"></a></li><li><a href="#clients" data-i18n="n_clients"></a></li><li><a href="#biz" data-i18n="n_biz"></a></li><li><a href="#process" data-i18n="n_process"></a></li></ul><div class="nr"><button class="lbtn" id="lang" aria-label="Language"></button><a class="cta" href="#contact" data-i18n="n_contact"></a></div></nav>
 
 <header class="hero" id="top"><div class="wrap">
  <div>
@@ -279,8 +298,8 @@ body.rec #rec,body.rec nav .cta{opacity:0}
   <h1 id="name"></h1>
   <div class="role fade" style="--d:1.6s"><em id="role"></em></div>
   <p class="bio fade" style="--d:1.8s" id="bio"></p>
-  <div class="btns fade" style="--d:2s"><a class="btn p mag" href="#works">View my work</a><a class="btn s mag" href="#contact">Start a project</a></div>
-  <div class="cue fade" style="--d:2.3s"><i></i>SCROLL</div>
+  <div class="btns fade" style="--d:2s"><a class="btn p mag" href="#works" data-i18n="b_view"></a><a class="btn s mag" href="#contact" data-i18n="b_start"></a></div>
+  <div class="cue fade" style="--d:2.3s"><i></i><span data-i18n="cue"></span></div>
  </div>
  <div class="pw fade" style="--d:1.3s" id="pw">
   <div class="orbit"></div><div class="orbit o2"></div>
@@ -302,8 +321,8 @@ body.rec #rec,body.rec nav .cta{opacity:0}
  </div>
  <div class="shade" id="reelShade"></div>
  <div class="mask" id="reelMask"><span id="reelT">AI VIDEO</span></div>
- <div class="lab" id="reelLab">SCROLL TO ZOOM IN</div>
- <div class="cap" id="reelCap"><h3>Motion that makes people <i>stop scrolling</i></h3></div>
+ <div class="lab" id="reelLab" data-i18n="reel_lab"></div>
+ <div class="cap" id="reelCap"><h3 data-i18n="reel_cap"></h3></div>
 </div></section>
 
 <div class="marq"><div class="t" id="mq"></div><div class="t" id="mq2"></div></div>
@@ -313,62 +332,62 @@ body.rec #rec,body.rec nav .cta{opacity:0}
 <div class="wrap"><div class="stats" id="stats"></div></div>
 
 <section class="blk" id="services"><div class="bgword">SERVICES</div><div class="wrap">
- <div class="eyebrow" data-scr>SERVICES</div><h2 class="split">What I <i>offer</i></h2>
+ <div class="eyebrow" data-scr>SERVICES</div><h2 class="split" data-i18n="h_services"></h2>
  <div class="services" id="svc"></div>
 </div></section>
 
 <section class="blk" id="works"><div class="bgword">PORTFOLIO</div><div class="wrap">
- <div class="eyebrow" data-scr>SELECTED WORK</div><h2 class="split">Featured <i>work</i></h2>
+ <div class="eyebrow" data-scr>SELECTED WORK</div><h2 class="split" data-i18n="h_works"></h2>
  <div class="filters rv" id="filters"></div>
  <div class="works" id="grid"></div>
  <div style="text-align:center;margin-top:30px"><button class="btn s mag" id="more" style="background:none"></button></div>
 </div></section>
 
 <section class="blk" id="shoot"><div class="bgword">PHOTOGRAPHY</div><div class="wrap">
- <div class="eyebrow" data-scr>FOOD PHOTOGRAPHY</div><h2 class="split">The full menu <i>photoshoot</i></h2>
- <p class="cl-note rv">A complete menu shoot for Mandi Al Deera, <b>shot and retouched by me</b> and ready for printed menus, social media and ads. Click any image to enlarge.</p>
+ <div class="eyebrow" data-scr>FOOD PHOTOGRAPHY</div><h2 class="split" data-i18n="h_shoot"></h2>
+ <p class="cl-note rv" data-i18n="note_shoot"></p>
  <div class="filters rv" id="pfilters"></div>
  <div class="photos" id="photos"></div>
 </div></section>
 
 <section class="blk" id="menu"><div class="bgword">MENU</div><div class="wrap">
- <div class="eyebrow" data-scr>MENU DESIGN SYSTEM</div><h2 class="split">A story for <i>every dish</i></h2>
- <p class="cl-note rv">A complete set of menu stories for Mandi Al Deera, designed per category: <b>drinks, local meat, grills, starters and hot dishes</b>, each with its own colour world and the same brand system. Click any image to enlarge.</p>
+ <div class="eyebrow" data-scr>MENU DESIGN SYSTEM</div><h2 class="split" data-i18n="h_menu"></h2>
+ <p class="cl-note rv" data-i18n="note_menu"></p>
  <div class="strips" id="strips"></div>
  <div class="mrow">
-  <div class="mvid rv" data-cur="PLAY"><video src="media/videos/md_motion_makhmoud.mp4" poster="media/videos/md_motion_makhmoud.jpg" muted loop playsinline preload="metadata"></video><div class="mtag">MOTION VERSION</div></div>
+  <div class="mvid rv" data-cur="PLAY"><video src="media/videos/md_motion_makhmoud.mp4" poster="media/videos/md_motion_makhmoud.jpg" muted loop playsinline preload="metadata"></video><div class="mtag" data-i18n="mtag"></div></div>
   <div class="msing" id="msing"></div>
  </div>
 </div></section>
 
 <section class="blk" id="podcast"><div class="bgword">PODCAST</div><div class="wrap">
- <div class="eyebrow" data-scr>PODCAST PRODUCTION</div><h2 class="split">Podcast filming and <i>editing</i> with AI</h2>
- <p class="cl-note rv">From raw single or dual-camera recordings to short, publish-ready clips: <b>on-screen interviewer questions, word-timed Arabic captions, split-screen layouts and cleaned audio</b>. Click any clip to play it with sound.</p>
+ <div class="eyebrow" data-scr>PODCAST PRODUCTION</div><h2 class="split" data-i18n="h_podcast"></h2>
+ <p class="cl-note rv" data-i18n="note_podcast"></p>
  <div class="pods" id="pods"></div>
 </div></section>
 
 <section class="blk" id="clients"><div class="bgword">CLIENTS</div><div class="wrap">
- <div class="eyebrow" data-scr>CLIENTS</div><h2 class="split">Accounts I run <i>end to end</i></h2>
- <p class="cl-note rv">I personally run these accounts from start to finish: <b>filming, design, editing, copywriting and publishing</b>.</p>
+ <div class="eyebrow" data-scr>CLIENTS</div><h2 class="split" data-i18n="h_clients"></h2>
+ <p class="cl-note rv" data-i18n="note_clients"></p>
  <div class="clients" id="cls"></div>
 </div></section>
 
 <section class="blk" id="biz"><div class="bgword">AI BUILDER</div><div class="wrap">
- <div class="eyebrow" data-scr>AI BUSINESS DEVELOPER</div><h2 class="split">AI business <i>developer</i></h2>
- <p class="biz-intro rv">Beyond video. I study how a business actually runs, find what slows its sales or exhausts its team, come up with a new idea to fix it, then build it with AI and refine it around your needs.</p>
- <div class="flow rv"><span>Operational problem</span><i>▶</i><span>New idea</span><i>▶</i><span>AI-built prototype</span><i>▶</i><span>Live deployment</span><i>▶</i><span>Ongoing refinement</span></div>
+ <div class="eyebrow" data-scr>AI BUSINESS DEVELOPER</div><h2 class="split" data-i18n="h_biz"></h2>
+ <p class="biz-intro rv" data-i18n="intro_biz"></p>
+ <div class="flow rv" id="flow"></div>
  <div class="projs" id="projs"></div>
 </div></section>
 
 <section class="blk" id="process"><div class="bgword">PROCESS</div><div class="wrap">
- <div class="eyebrow" data-scr>PROCESS</div><h2 class="split">How we <i>work</i> together</h2>
+ <div class="eyebrow" data-scr>PROCESS</div><h2 class="split" data-i18n="h_process"></h2>
  <div class="steps" id="steps"><div class="ln" id="sln"></div></div>
 </div></section>
 
 <section class="contact" id="contact"><div class="wrap">
  <div class="eyebrow" data-scr>LET'S WORK TOGETHER</div>
- <h2 class="split">Let's build something <i>extraordinary</i></h2>
- <p class="bio rv" style="margin:auto">Send me your idea and I'll come back with a plan and a quote.</p>
+ <h2 class="split" data-i18n="h_contact"></h2>
+ <p class="bio rv" style="margin:auto" data-i18n="p_contact"></p>
  <div class="links rv" id="links"></div>
 </div></section>
 <footer id="foot"></footer>
@@ -379,176 +398,239 @@ body.rec #rec,body.rec nav .cta{opacity:0}
 /* ====== EDIT HERE ONLY ====== */
 const PROFILE = {
   name: "Hussam Safar",
-  tag: "AI VIDEO EDITOR",
-  roles: ["AI Video Editor","AI-powered video editing","AI UGC ads","AI logo and image design","Full social media management","Custom AI tools for your business"],
-  bio: "I edit and produce video and ads with AI, and run Instagram accounts end to end for business owners: filming, design, editing, copywriting and publishing. I also build AI tools that solve real operational problems.",
-  statement: "I turn ideas into videos that sell, and build the AI tools that keep your business moving.",
-  statementGold: ["videos","sell,","AI","tools"],
   instagram: "",   /* add your Instagram URL to show the button, e.g. https://instagram.com/xxx */
   whatsapp: "https://wa.me/971504639290",
   email: "mailto:hussamsafar99@gmail.com",
   handle: ""
 };
+/* every text is a pair: [English, Arabic] */
+const PROF = {
+  tag: ["AI VIDEO EDITOR","محرّر فيديو بالذكاء الاصطناعي"],
+  roles: [
+    ["AI Video Editor","محرّر فيديو بالذكاء الاصطناعي"],
+    ["AI-powered video editing","مونتاج مدعوم بالذكاء الاصطناعي"],
+    ["AI UGC ads","إعلانات UGC بالذكاء الاصطناعي"],
+    ["AI logo and image design","تصميم شعارات وصور بالذكاء الاصطناعي"],
+    ["Full social media management","إدارة كاملة لحسابات التواصل"],
+    ["Custom AI tools for your business","أدوات ذكية مخصّصة لعملك"]
+  ],
+  bio: ["I edit and produce video and ads with AI, and run Instagram accounts end to end for business owners: filming, design, editing, copywriting and publishing. I also build AI tools that solve real operational problems.",
+        "أمنتج وأصنع الفيديوهات والإعلانات بالذكاء الاصطناعي، وأدير حسابات إنستغرام لأصحاب الأعمال من الألف إلى الياء: تصوير، تصميم، مونتاج، كتابة محتوى ونشر. وأبني أدوات ذكية تحلّ مشكلات حقيقية في تشغيل عملك."],
+  statement: ["I turn ideas into videos that sell, and build the AI tools that keep your business moving.",
+              "أحوّل الأفكار إلى فيديوهات تبيع، وأبني أدوات الذكاء الاصطناعي التي تُبقي عملك في حركة."],
+  gold: [["videos","sell,","AI","tools"],["فيديوهات","تبيع،","الذكاء","الاصطناعي"]]
+};
 const MARQUEE = ["VIDEO EDITING","AI LOGO + IMAGES","AI ADS","MOTION GRAPHICS","UGC","REELS","PODCAST"];
+const STAT_LABELS = [["Brands managed","علامات أديرها"],["Featured works","أعمال مختارة"],["Podcast clips","مقاطع بودكاست"],["Live AI products","منتجات ذكية قيد التشغيل"]];
 const SERVICES = [
-  ["Full social media management","One person, end to end: filming, design, editing, copywriting and publishing. You hand over the account and get a consistent, on-brand feed."],
-  ["AI reel and ad editing","Silence removal, word-timed Arabic captions and motion graphics in your brand colours, accelerated with AI tools."],
-  ["AI podcast production","Single or multi-camera filming and editing, cleaned audio, on-screen questions and short clips ready to publish."],
-  ["AI UGC ads","Scripts, shot lists and ready-to-use prompts, plus AI-generated visuals in a creator-style format."],
-  ["AI motion graphics","Animated titles, transitions and numbers that give every video a polished, professional finish."],
-  ["Business ideas and custom tools","I spot a problem in your operation, design a solution and build it with AI, then keep improving it as your needs change."],
-  ["AI logo and image design","Logos for your brand identity and professional AI-generated imagery for products, ads and posts."],
-  ["Video covers and thumbnails","Eye-catching covers that lift click-through on YouTube and Instagram."]
+  [["Full social media management","إدارة كاملة لحسابات التواصل الاجتماعي"],["One person, end to end: filming, design, editing, copywriting and publishing. You hand over the account and get a consistent, on-brand feed.","شخص واحد من البداية للنهاية: تصوير، تصميم، مونتاج، كتابة محتوى ونشر. تسلّمني الحساب وتحصل على صفحة متناسقة بهوية علامتك."]],
+  [["AI reel and ad editing","مونتاج الريلز والإعلانات بالذكاء الاصطناعي"],["Silence removal, word-timed Arabic captions and motion graphics in your brand colours, accelerated with AI tools.","حذف السكتات، كابشن عربي بتوقيت الكلمة، وموشن جرافيك بألوان هوية علامتك، بسرعة أدوات الذكاء الاصطناعي."]],
+  [["AI podcast production","إنتاج البودكاست بالذكاء الاصطناعي"],["Single or multi-camera filming and editing, cleaned audio, on-screen questions and short clips ready to publish.","تصوير ومونتاج بكاميرا أو أكثر، تنقية الصوت، أسئلة على الشاشة ومقاطع قصيرة جاهزة للنشر."]],
+  [["AI UGC ads","إعلانات UGC بالذكاء الاصطناعي"],["Scripts, shot lists and ready-to-use prompts, plus AI-generated visuals in a creator-style format.","سيناريوهات وقوائم لقطات وأوامر جاهزة، مع مرئيات مولّدة بالذكاء الاصطناعي بأسلوب صنّاع المحتوى."]],
+  [["AI motion graphics","موشن جرافيك بالذكاء الاصطناعي"],["Animated titles, transitions and numbers that give every video a polished, professional finish.","عناوين وانتقالات وأرقام متحركة تمنح كل فيديو لمسة احترافية متقنة."]],
+  [["Business ideas and custom tools","أفكار أعمال وأدوات مخصّصة"],["I spot a problem in your operation, design a solution and build it with AI, then keep improving it as your needs change.","ألاحظ مشكلة في تشغيل عملك، أصمّم لها حلاً وأبنيه بالذكاء الاصطناعي، ثم أواصل تطويره مع تغيّر احتياجك."]],
+  [["AI logo and image design","تصميم شعارات وصور بالذكاء الاصطناعي"],["Logos for your brand identity and professional AI-generated imagery for products, ads and posts.","شعارات لهوية مشروعك وصور احترافية مولّدة بالذكاء الاصطناعي للمنتجات والإعلانات والمنشورات."]],
+  [["Video covers and thumbnails","أغلفة الفيديو"],["Eye-catching covers that lift click-through on YouTube and Instagram.","أغلفة جاذبة ترفع نسبة النقر على يوتيوب وإنستغرام."]]
 ];
-/* type: video | image — put files in the media folder and set the path in src */
-const V=(t,c,n)=>({title:t,cat:c,type:"video",src:`media/videos/${n}.mp4`,poster:`media/videos/${n}.jpg`,ar:"9/16"});
-const I=(t,c,p,ar)=>({title:t,cat:c,type:"image",src:p,ar});
+const CATL = {"All":"الكل","Factory Price":"فاكتوري برايس","Al Satari":"السطري","Mandi Al Deera":"مندي الديرة","Al Deera Express":"الديرة إكسبريس","Tadawul":"تداول",
+  "Chicken":"دجاج","Lamb":"لحم","Grills":"مشاوي","Fish":"سمك","Salads":"سلطات","Stews":"قلابات","Starters":"مقبلات","Desserts":"حلويات"};
+const V=(t,c,n)=>({title:t,cat:c,type:"video",src:`media/videos/${n}.mp4`,poster:`media/videos/${n}.jpg`,asp:"9/16"});
+const I=(t,c,p,asp)=>({title:t,cat:c,type:"image",src:p,asp});
 const WORKS = [
-  V("Ad: without the price you're used to paying","Factory Price","fp_price"),
-  V("Reel: travertine at a steal","Factory Price","fp_travertine"),
-  V("Reel: the 120×120 size","Factory Price","fp_size"),
-  V("Reel: Spanish porcelain","Al Satari","as_spanish"),
-  V("Reel: charcoal-grilled makhmoud lamb","Mandi Al Deera","md_grill"),
-  V("Reel: come and eat with me","Mandi Al Deera","md_eat"),
-  V("Motion: two-chicken mandi offer, 149","Al Deera Express","ex_motion149"),
-  V("Reel: the 109 offer in pixel style","Al Deera Express","ex_pixel109"),
-  V("Story video: the ten offers","Al Deera Express","ex_stories"),
-  V("Gold webinar: 14 November","Tadawul","td_14"),
-  V("Gold webinar: 18 November","Tadawul","td_18"),
-  V("Villa floor plan: version 3","Al Satari","as_villa3"),
-  V("Villa floor plan: version 4","Al Satari","as_villa4"),
-  I("Live the moment","Mandi Al Deera","media/designs/web/mp4.jpg","1/1"),
-  I("The plate in your hands","Mandi Al Deera","media/designs/web/mp5.jpg","1/1"),
-  I("Even the Mona Lisa couldn't resist","Mandi Al Deera","media/designs/web/mp7.jpg","1/1"),
-  I("Flavours that tell stories","Mandi Al Deera","media/designs/web/mp6.jpg","1/1"),
-  I("Served with a smile","Mandi Al Deera","media/designs/web/mp9.jpg","1/1"),
-  I("Mandi lovers","Mandi Al Deera","media/designs/web/mp25.jpg","1/1"),
-  I("The majlis table","Mandi Al Deera","media/designs/web/mp29.jpg","1/1"),
-  I("Spiced lamb madfoon","Mandi Al Deera","media/designs/web/mp31.jpg","1/1"),
-  I("Charcoal-grilled chicken","Mandi Al Deera","media/designs/web/mp32.jpg","1/1"),
-  I("Dessert menu","Mandi Al Deera","media/designs/web/mp43.jpg","1/1"),
-  I("Dangerously good","Mandi Al Deera","media/designs/web/mp56.jpg","1/1"),
-  I("Scientific proof: even babies love mandi","Mandi Al Deera","media/designs/web/mp52.jpg","1/1"),
-  I("Madfoon o'clock","Mandi Al Deera","media/designs/web/md20.jpg","1/1"),
-  I("Eid Al-Adha greeting","Mandi Al Deera","media/designs/web/md21.jpg","1/1"),
-  I("Combo: one-chicken mandi, 59","Al Deera Express","media/designs/web/ex59.jpg","9/16"),
-  I("Combo: two-chicken mandi, 109","Al Deera Express","media/designs/web/ex109.jpg","9/16"),
-  I("Combo: two-chicken mandi, 149","Al Deera Express","media/designs/web/ex149.jpg","9/16"),
-  I("Supreme combo, 219","Al Deera Express","media/designs/web/ex219.jpg","9/16"),
-  I("Spanish slabs: Saint Laurent","Al Satari","media/designs/web/8.jpg","4/5"),
-  I("Spanish slabs: Atlantis Gold","Al Satari","media/designs/web/9.jpg","4/5"),
-  I("Spanish slabs: Mayfair Oak","Al Satari","media/designs/web/11.jpg","4/5"),
-  I("Warmth in every detail","Al Satari","media/designs/web/27.jpg","4/5"),
-  I("A porcelain for every style","Factory Price","media/designs/web/10.jpg","4/5"),
-  I("See, compare, choose with confidence","Factory Price","media/designs/web/13.jpg","4/5"),
-  I("Porcelain isn't just for floors","Factory Price","media/designs/web/15.jpg","4/5"),
-  I("Tile size changes the space","Factory Price","media/designs/web/17.jpg","4/5"),
-  I("A statement in gloss","Factory Price","media/designs/web/21.jpg","4/5"),
-  I("From a tile to a space that tells your taste","Factory Price","media/designs/web/23.jpg","4/5"),
-  I("1 cm or 2 cm?","Factory Price","media/designs/web/24.jpg","4/5"),
-  I("Your bathroom deserves the details","Factory Price","media/designs/web/26.jpg","4/5")
+  V(["Ad: without the price you're used to paying","إعلان: من غير السعر الذي اعتدت دفعه"],"Factory Price","fp_price"),
+  V(["Reel: travertine at a steal","ريل: ترافرتين بسعر لقطة"],"Factory Price","fp_travertine"),
+  V(["Reel: the 120×120 size","ريل: مقاس 120×120"],"Factory Price","fp_size"),
+  V(["Reel: Spanish porcelain","ريل: البورسلان الإسباني"],"Al Satari","as_spanish"),
+  V(["Reel: charcoal-grilled makhmoud lamb","ريل: مخمود لحم على الفحم"],"Mandi Al Deera","md_grill"),
+  V(["Reel: come and eat with me","ريل: تعال كُل معي"],"Mandi Al Deera","md_eat"),
+  V(["Motion: two-chicken mandi offer, 149","موشن: عرض دجاجتين مندي 149"],"Al Deera Express","ex_motion149"),
+  V(["Reel: the 109 offer in pixel style","ريل: عرض 109 بأسلوب البكسل"],"Al Deera Express","ex_pixel109"),
+  V(["Story video: the ten offers","ستوري فيديو: العروض العشرة"],"Al Deera Express","ex_stories"),
+  V(["Gold webinar: 14 November","ويبينار الذهب: 14 نوفمبر"],"Tadawul","td_14"),
+  V(["Gold webinar: 18 November","ويبينار الذهب: 18 نوفمبر"],"Tadawul","td_18"),
+  V(["Villa floor plan: version 3","مخطط الفيلا: النسخة 3"],"Al Satari","as_villa3"),
+  V(["Villa floor plan: version 4","مخطط الفيلا: النسخة 4"],"Al Satari","as_villa4"),
+  I(["Live the moment","عِش اللحظة"],"Mandi Al Deera","media/designs/web/mp4.jpg","1/1"),
+  I(["The plate in your hands","الطبق بين يديك"],"Mandi Al Deera","media/designs/web/mp5.jpg","1/1"),
+  I(["Even the Mona Lisa couldn't resist","حتى الموناليزا لم تقاوم"],"Mandi Al Deera","media/designs/web/mp7.jpg","1/1"),
+  I(["Flavours that tell stories","نكهة تحكي حكايات"],"Mandi Al Deera","media/designs/web/mp6.jpg","1/1"),
+  I(["Served with a smile","يُقدَّم بابتسامة"],"Mandi Al Deera","media/designs/web/mp9.jpg","1/1"),
+  I(["Mandi lovers","عشّاق المندي"],"Mandi Al Deera","media/designs/web/mp25.jpg","1/1"),
+  I(["The majlis table","مجلس عربي"],"Mandi Al Deera","media/designs/web/mp29.jpg","1/1"),
+  I(["Spiced lamb madfoon","مدفون لحم بالبهارات"],"Mandi Al Deera","media/designs/web/mp31.jpg","1/1"),
+  I(["Charcoal-grilled chicken","دجاج مشوي على الفحم"],"Mandi Al Deera","media/designs/web/mp32.jpg","1/1"),
+  I(["Dessert menu","قائمة الحلويات"],"Mandi Al Deera","media/designs/web/mp43.jpg","1/1"),
+  I(["Dangerously good","طعم خطير"],"Mandi Al Deera","media/designs/web/mp56.jpg","1/1"),
+  I(["Scientific proof: even babies love mandi","إثبات علمي: حتى الأجنّة تعشق المندي"],"Mandi Al Deera","media/designs/web/mp52.jpg","1/1"),
+  I(["Madfoon o'clock","وقت المدفون"],"Mandi Al Deera","media/designs/web/md20.jpg","1/1"),
+  I(["Eid Al-Adha greeting","تهنئة عيد الأضحى"],"Mandi Al Deera","media/designs/web/md21.jpg","1/1"),
+  I(["Combo: one-chicken mandi, 59","كومبو: دجاجة مندي، 59"],"Al Deera Express","media/designs/web/ex59.jpg","9/16"),
+  I(["Combo: two-chicken mandi, 109","كومبو: دجاجتان مندي، 109"],"Al Deera Express","media/designs/web/ex109.jpg","9/16"),
+  I(["Combo: two-chicken mandi, 149","كومبو: دجاجتان مندي، 149"],"Al Deera Express","media/designs/web/ex149.jpg","9/16"),
+  I(["Supreme combo, 219","الكومبو السوبريم، 219"],"Al Deera Express","media/designs/web/ex219.jpg","9/16"),
+  I(["Spanish slabs: Saint Laurent","سلابات إسبانية: سان لوران"],"Al Satari","media/designs/web/8.jpg","4/5"),
+  I(["Spanish slabs: Atlantis Gold","سلابات إسبانية: أتلانتس جولد"],"Al Satari","media/designs/web/9.jpg","4/5"),
+  I(["Spanish slabs: Mayfair Oak","سلابات إسبانية: ماي فير أوك"],"Al Satari","media/designs/web/11.jpg","4/5"),
+  I(["Warmth in every detail","دفء في كل تفصيلة"],"Al Satari","media/designs/web/27.jpg","4/5"),
+  I(["A porcelain for every style","بورسلان لكل ستايل"],"Factory Price","media/designs/web/10.jpg","4/5"),
+  I(["See, compare, choose with confidence","شاهد، قارن، واختر بثقة"],"Factory Price","media/designs/web/13.jpg","4/5"),
+  I(["Porcelain isn't just for floors","البورسلان ليس للأرضيات فقط"],"Factory Price","media/designs/web/15.jpg","4/5"),
+  I(["Tile size changes the space","مقاس البلاطة يغيّر المساحة"],"Factory Price","media/designs/web/17.jpg","4/5"),
+  I(["A statement in gloss","لمعة لافتة"],"Factory Price","media/designs/web/21.jpg","4/5"),
+  I(["From a tile to a space that tells your taste","من بلاطة إلى مساحة تحكي ذوقك"],"Factory Price","media/designs/web/23.jpg","4/5"),
+  I(["1 cm or 2 cm?","1 سم أو 2 سم؟"],"Factory Price","media/designs/web/24.jpg","4/5"),
+  I(["Your bathroom deserves the details","حمّامك يستحق تفاصيل تليق به"],"Factory Price","media/designs/web/26.jpg","4/5")
 ];
 /* Accounts (follower counts from screenshots taken 2026-11-18, update when they change) */
-const TAGS = ["Filming","Design","Editing","Content","Publishing"];
+const TAGS = [["Filming","تصوير"],["Design","تصميم"],["Editing","مونتاج"],["Content","محتوى"],["Publishing","نشر"]];
 const CLIENTS = [
-  {ini:"AS",full:true,logo:"media/logos/as.png",name:"Al Satari Trading",handle:"alsatari_group",kind:"Building materials, since 1976",posts:"663",fol:"13.8K",ac:"#1d4fa8"},
-  {ini:"FP",full:true,logo:"media/logos/fp.png",name:"Factory Price",handle:"factoryprice.ae",kind:"Ceramic and porcelain showroom, Abu Dhabi",posts:"232",fol:"3,001",ac:"#c4161c"},
-  {ini:"MD",name:"Mandi Al Deera",handle:"mandi_aldeera",logo:"media/logos/mandi_s.png",kind:"Mandi and grills restaurant",posts:"265",fol:"2,179",ac:"#8a1f3d"},
-  {ini:"DX",full:true,logo:"media/logos/dx.png",name:"Al Deera Express",handle:"aldeeraexpress",kind:"Chicken, meat and offers delivery, Al Ain",posts:"14",fol:"112",ac:"#a3213f"}
+  {ini:"AS",full:true,logo:"media/logos/as.png",name:["Al Satari Trading","السطري التجارية"],handle:"alsatari_group",kind:["Building materials, since 1976","مواد بناء، منذ 1976"],posts:"663",fol:"13.8K",ac:"#1d4fa8",th:"as"},
+  {ini:"FP",full:true,logo:"media/logos/fp.png",name:["Factory Price","فاكتوري برايس"],handle:"factoryprice.ae",kind:["Ceramic and porcelain showroom, Abu Dhabi","معرض سيراميك وبورسلان، أبوظبي"],posts:"232",fol:"3,001",ac:"#c4161c",th:"fp"},
+  {ini:"MD",name:["Mandi Al Deera","مندي الديرة"],handle:"mandi_aldeera",logo:"media/logos/mandi_s.png",kind:["Mandi and grills restaurant","مطعم مندي ومشاوي"],posts:"265",fol:"2,179",ac:"#8a1f3d",th:"md"},
+  {ini:"DX",full:true,logo:"media/logos/dx.png",name:["Al Deera Express","الديرة إكسبريس"],handle:"aldeeraexpress",kind:["Chicken, meat and offers delivery, Al Ain","توصيل دجاج ولحوم وعروض، العين"],posts:"14",fol:"112",ac:"#a3213f",th:"dx"}
 ];
 /* AI business projects */
 const BIZ = [
-  {ic:"📲",title:"NFC waiter and Google review tracker",status:"LIVE",
-   problem:"Restaurants can't tell which waiter earns the reviews, and guests forget to leave one.",
-   desc:"An NFC sticker on each table sends guests straight to the restaurant's Google review page while the system records which waiter served them.",
-   feats:["Admin dashboard with per-waiter performance","Automatic sync with Google reviews, every 30 minutes","Runs on free hosting, with no monthly cost"],
-   link:"https://nfc-review-tracker-t8wp.onrender.com",linkText:"View live system"},
-  {ic:"🔔",title:"Smart pager, a pager replacement",status:"LIVE",
-   problem:"Traditional pagers are costly, break easily and go missing in cafés.",
-   desc:"Guests scan a QR code and follow their order live on their phone. Staff tap “Ready” and the guest is alerted instantly. No hardware and no POS integration.",
-   feats:["A guest page and a staff page","Instant alert when the order is ready","Coming next: loyalty card, name calling and a queue system"],
-   link:"https://pager-mnzi.onrender.com",linkText:"View live system"}
+  {ic:"📲",title:["NFC waiter and Google review tracker","تتبّع النادل وتقييمات قوقل عبر NFC"],status:"LIVE",
+   problem:["Restaurants can't tell which waiter earns the reviews, and guests forget to leave one.","لا يعرف المطعم أي نادل يجلب التقييمات، والضيف ينسى أن يقيّم."],
+   desc:["An NFC sticker on each table sends guests straight to the restaurant's Google review page while the system records which waiter served them.","ملصق NFC على كل طاولة يوجّه الضيف مباشرة إلى صفحة تقييم المطعم على قوقل، بينما يسجّل النظام النادل الذي خدمه."],
+   feats:[["Admin dashboard with per-waiter performance","لوحة إدارة تعرض أداء كل نادل"],["Automatic sync with Google reviews, every 30 minutes","مزامنة تلقائية مع تقييمات قوقل كل 30 دقيقة"],["Runs on free hosting, with no monthly cost","يعمل على استضافة مجانية بلا تكلفة شهرية"]],
+   link:"https://nfc-review-tracker-t8wp.onrender.com",linkText:["View live system","شاهد النظام الحي"]},
+  {ic:"🔔",title:["Smart pager, a pager replacement","بيجر ذكي بديل أجهزة النداء"],status:"LIVE",
+   problem:["Traditional pagers are costly, break easily and go missing in cafés.","أجهزة النداء التقليدية مكلفة وتتعطل وتضيع في المقاهي."],
+   desc:["Guests scan a QR code and follow their order live on their phone. Staff tap “Ready” and the guest is alerted instantly. No hardware and no POS integration.","يمسح الضيف رمز QR ويتابع طلبه مباشرة على هاتفه، ويضغط الموظف «جاهز» فيصله التنبيه فوراً. بلا أجهزة وبلا ربط بنظام الكاشير."],
+   feats:[["A guest page and a staff page","صفحة للضيف وصفحة للموظفين"],["Instant alert when the order is ready","تنبيه فوري عند جاهزية الطلب"],["Coming next: loyalty card, name calling and a queue system","قادماً: بطاقة ولاء، نداء بالاسم، ونظام طوابير"]],
+   link:"https://pager-mnzi.onrender.com",linkText:["View live system","شاهد النظام الحي"]}
 ];
 /* Podcast clips — files in media/videos */
 const PODCASTS = [
-  {title:"“How to choose porcelain?” podcast: main reel",tag:"90-second reel · single camera",n:"pod_main"},
-  {title:"Interviewer question on screen",tag:"Captions + question card",n:"pod_q"},
-  {title:"Porcelain podcast: clip 1",tag:"Dual-camera split screen",n:"pod_1"},
-  {title:"Porcelain podcast: clip 2",tag:"Dual-camera split screen",n:"pod_2"},
-  {title:"Porcelain podcast: clip 3 (one minute)",tag:"Dual-camera split screen",n:"pod_3"},
-  {title:"Porcelain podcast: clip 4",tag:"Dual-camera split screen",n:"pod_4"}
+  {title:["“How to choose porcelain?” podcast: main reel","بودكاست «كيف تختار البورسلان؟»: الريل الرئيسي"],tag:["90-second reel · single camera","ريل 90 ثانية · كاميرا واحدة"],n:"pod_main"},
+  {title:["Interviewer question on screen","سؤال المحاور على الشاشة"],tag:["Captions + question card","كابشن + بطاقة سؤال"],n:"pod_q"},
+  {title:["Porcelain podcast: clip 1","بودكاست البورسلان: المقطع 1"],tag:["Dual-camera split screen","تقسيم شاشة بكاميرتين"],n:"pod_1"},
+  {title:["Porcelain podcast: clip 2","بودكاست البورسلان: المقطع 2"],tag:["Dual-camera split screen","تقسيم شاشة بكاميرتين"],n:"pod_2"},
+  {title:["Porcelain podcast: clip 3 (one minute)","بودكاست البورسلان: المقطع 3 (دقيقة)"],tag:["Dual-camera split screen","تقسيم شاشة بكاميرتين"],n:"pod_3"},
+  {title:["Porcelain podcast: clip 4","بودكاست البورسلان: المقطع 4"],tag:["Dual-camera split screen","تقسيم شاشة بكاميرتين"],n:"pod_4"}
 ];
-/* Menu photoshoot — files in media/photos */
+/* Menu photoshoot — files in media/photos: [file id, English, Arabic, category] */
 const PHOTOS = [
-  [10,"Chicken mandi","Chicken"],[8,"Grilled chicken on rice","Chicken"],[7,"Chicken and rice","Chicken"],
-  [110,"Lamb mandi","Lamb"],[113,"Lamb madfoon","Lamb"],[112,"Lamb mandi","Lamb"],
-  [115,"Mixed grill","Grills"],[116,"Grilled lamb ribs","Grills"],[118,"Grill with flatbread","Grills"],
-  [17,"Grilled fish with rice","Fish"],[19,"Grilled fish","Fish"],
-  [12,"Garden salad","Salads"],[13,"Pomegranate salad","Salads"],[16,"Greek salad","Salads"],
-  [21,"Stew","Stews"],[24,"Stew","Stews"],
-  [121,"Hummus with meat","Starters"],[125,"Stuffed vine leaves","Starters"],[128,"Samosa","Starters"],[130,"Kibbeh","Starters"],
-  [4,"Kunafa","Desserts"],[1,"Date and nut dessert","Desserts"],[2,"Date dessert","Desserts"]
+  [10,"Chicken mandi","مندي دجاج","Chicken"],[8,"Grilled chicken on rice","دجاج مشوي على الأرز","Chicken"],[7,"Chicken and rice","دجاج بالأرز","Chicken"],
+  [110,"Lamb mandi","مندي لحم","Lamb"],[113,"Lamb madfoon","مدفون لحم","Lamb"],[112,"Lamb mandi","مندي لحم","Lamb"],
+  [115,"Mixed grill","مشاوي مشكّلة","Grills"],[116,"Grilled lamb ribs","ريش مشوية","Grills"],[118,"Grill with flatbread","مشاوي مع الخبز","Grills"],
+  [17,"Grilled fish with rice","سمك مشوي مع الأرز","Fish"],[19,"Grilled fish","سمك مشوي","Fish"],
+  [12,"Garden salad","سلطة خضار","Salads"],[13,"Pomegranate salad","سلطة بالرمان","Salads"],[16,"Greek salad","سلطة يونانية","Salads"],
+  [21,"Stew","قلابة","Stews"],[24,"Stew","قلابة","Stews"],
+  [121,"Hummus with meat","حمص باللحم","Starters"],[125,"Stuffed vine leaves","ورق عنب","Starters"],[128,"Samosa","سمبوسة","Starters"],[130,"Kibbeh","كبة","Starters"],
+  [4,"Kunafa","كنافة","Desserts"],[1,"Date and nut dessert","حلى بالمكسرات والتمر","Desserts"],[2,"Date dessert","حلى بالتمر","Desserts"]
 ];
-const STEPS = [["01","Idea","We clarify your goal, your audience and the style."],["02","Script","I write the copy and the shot list."],["03","Production","Editing, motion and sound to a high standard."],["04","Delivery","Final files, ready to publish."]];
+/* Menu story designs — files in media/menu */
+const MENU_STRIPS=[["overview",["Drinks and hot dishes","المشروبات والأطباق الساخنة"]],["meat",["Local meat","اللحم المحلي"]],["grills",["Grills","المشاوي"]]];
+const MENU_SINGLES=[["fries",["Fries","بطاطس"]],["hummus",["Hummus","حمص"]],["alfahsa",["Alfahsa","الفحسة"]],["salta",["Salta","سلتة"]],["madhbi",["Madhbi chicken","مظي الدجاج"]],["madfoon",["Madfoon chicken","مدفون الدجاج"]],["boorma",["Lamb boorma","بورمة اللحم"]],["sambosa",["Sambosa","سمبوسة"]]];
+const STEPS = [["01",["Idea","الفكرة"],["We clarify your goal, your audience and the style.","نحدّد هدفك وجمهورك وأسلوب العمل."]],["02",["Script","السيناريو"],["I write the copy and the shot list.","أكتب النص وقائمة اللقطات."]],["03",["Production","التنفيذ"],["Editing, motion and sound to a high standard.","مونتاج وموشن وصوت بمستوى عالٍ."]],["04",["Delivery","التسليم"],["Final files, ready to publish.","ملفات نهائية جاهزة للنشر."]]];
+const FLOW = [["Operational problem","مشكلة تشغيلية"],["New idea","فكرة جديدة"],["AI-built prototype","نموذج أولي بالذكاء الاصطناعي"],["Live deployment","تشغيل فعلي"],["Ongoing refinement","تطوير مستمر"]];
+/* static texts (data-i18n in the HTML) */
+const UI = {
+ en:{n_services:"Services",n_work:"Work",n_photo:"Photography",n_menu:"Menu",n_podcast:"Podcast",n_clients:"Clients",n_biz:"AI Builder",n_process:"Process",n_contact:"Get in touch",
+  b_view:"View my work",b_start:"Start a project",cue:"SCROLL",reel_lab:"SCROLL TO ZOOM IN",reel_cap:"Motion that makes people <i>stop scrolling</i>",
+  h_services:"What I <i>offer</i>",h_works:"Featured <i>work</i>",
+  h_shoot:"The full menu <i>photoshoot</i>",note_shoot:"A complete menu shoot for Mandi Al Deera, <b>shot and retouched by me</b> and ready for printed menus, social media and ads. Click any image to enlarge.",
+  h_menu:"A story for <i>every dish</i>",note_menu:"A complete set of menu stories for Mandi Al Deera, designed per category: <b>drinks, local meat, grills, starters and hot dishes</b>, each with its own colour world and the same brand system. Click any image to enlarge.",mtag:"MOTION VERSION",
+  h_podcast:"Podcast filming and <i>editing</i> with AI",note_podcast:"From raw single or dual-camera recordings to short, publish-ready clips: <b>on-screen interviewer questions, word-timed Arabic captions, split-screen layouts and cleaned audio</b>. Click any clip to play it with sound.",
+  h_clients:"Accounts I run <i>end to end</i>",note_clients:"I personally run these accounts from start to finish: <b>filming, design, editing, copywriting and publishing</b>.",
+  h_biz:"AI business <i>developer</i>",intro_biz:"Beyond video. I study how a business actually runs, find what slows its sales or exhausts its team, come up with a new idea to fix it, then build it with AI and refine it around your needs.",
+  h_process:"How we <i>work</i> together",h_contact:"Let's build something <i>extraordinary</i>",p_contact:"Send me your idea and I'll come back with a plan and a quote.",
+  followers:"Followers",posts:"Posts",open:"Open account",problem:"THE PROBLEM",solution:"THE SOLUTION",more:"Show more",less:"Show less",rec:"▶ RECORD MODE",stop:"■ STOP",whatsapp:"WhatsApp",email:"Email",instagram:"Instagram",arrow:"▶",lang:"عربي"},
+ ar:{n_services:"الخدمات",n_work:"الأعمال",n_photo:"التصوير",n_menu:"المنيو",n_podcast:"البودكاست",n_clients:"العملاء",n_biz:"مطوّر الأعمال",n_process:"طريقة العمل",n_contact:"تواصل معي",
+  b_view:"شاهد أعمالي",b_start:"ابدأ مشروعك",cue:"مرّر للأسفل",reel_lab:"مرّر للتكبير",reel_cap:"موشن يجعل الناس <i>تتوقف عن التمرير</i>",
+  h_services:"ماذا <i>أقدّم</i>",h_works:"أبرز <i>أعمالي</i>",
+  h_shoot:"جلسة تصوير <i>المنيو</i> كاملة",note_shoot:"جلسة تصوير كاملة لمنيو مندي الديرة، <b>صوّرتها وعدّلتها بنفسي</b> وجاهزة للمنيو المطبوع والسوشال ميديا والإعلانات. اضغط على أي صورة لتكبيرها.",
+  h_menu:"قصة <i>لكل طبق</i>",note_menu:"مجموعة كاملة من ستوريات المنيو لمندي الديرة، مصمّمة لكل فئة: <b>المشروبات، اللحم المحلي، المشاوي، المقبلات والأطباق الساخنة</b>، ولكل فئة عالمها اللوني ضمن نظام الهوية نفسه. اضغط على أي صورة لتكبيرها.",mtag:"نسخة الموشن",
+  h_podcast:"تصوير ومونتاج <i>البودكاست</i> بالذكاء الاصطناعي",note_podcast:"من تسجيل خام بكاميرا أو كاميرتين إلى مقاطع قصيرة جاهزة للنشر: <b>أسئلة المحاور على الشاشة، كابشن عربي بتوقيت الكلمة، تقسيم الشاشة وتنقية الصوت</b>. اضغط على أي مقطع لتشغيله بالصوت.",
+  h_clients:"حسابات <i>أديرها</i> من الألف إلى الياء",note_clients:"أدير هذه الحسابات بنفسي من البداية إلى النهاية: <b>تصوير، تصميم، مونتاج، كتابة محتوى ونشر</b>.",
+  h_biz:"مطوّر أعمال <i>بالذكاء الاصطناعي</i>",intro_biz:"أبعد من الفيديو. أدرس كيف يعمل النشاط فعلاً، وأجد ما يبطّئ مبيعاته أو يُرهق فريقه، وأبتكر فكرة جديدة لحلّه، ثم أبنيها بالذكاء الاصطناعي وأطوّرها حسب احتياجك.",
+  h_process:"كيف <i>نعمل</i> معاً",h_contact:"لنصنع شيئاً <i>استثنائياً</i>",p_contact:"أرسل لي فكرتك وأعود إليك بخطة وعرض سعر.",
+  followers:"متابع",posts:"منشور",open:"افتح الحساب",problem:"المشكلة",solution:"الحل",more:"عرض المزيد",less:"عرض أقل",rec:"▶ وضع التصوير",stop:"■ إيقاف",whatsapp:"واتساب",email:"البريد",instagram:"إنستغرام",arrow:"◀",lang:"EN"}
+};
 /* ========================= */
 
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+let LANG='en';
+try{const s=localStorage.getItem('lang');if(s==='ar'||s==='en')LANG=s}catch(e){}
+if(/[?&]lang=ar/.test(location.search))LANG='ar';
+const tr=p=>Array.isArray(p)?p[LANG==='ar'?1:0]:p;
+const U=k=>UI[LANG][k];
+const catL=c=>LANG==='ar'?(CATL[c]||c):c;
 const ALL='All';
-const STATS=[[CLIENTS.length,"","Brands managed"],[WORKS.length,"","Featured works"],[PODCASTS.length,"","Podcast clips"],[BIZ.length,"","Live AI products"]];
-
-/* kinetic text: words > characters, <i>…</i> = gold */
-function kinetic(el,html){let g=false,i=0;const out=[];
-  (html||el.innerHTML).split(/(<i>|<\/i>|\s+)/).forEach(t=>{if(t==='<i>')g=true;else if(t==='</i>')g=false;else if(t&&t.trim()){
-    out.push('<span class="wd">'+[...t].map(c=>`<span class="ch${g?' g':''}" style="--i:${i++}">${c}</span>`).join('')+'</span>')}});
-  el.innerHTML=out.join('');el.setAttribute('aria-label',el.textContent)}
-
-/* content */
-$('#logo').textContent='HS';
-const nm=PROFILE.name.split(' ');kinetic($('#name'),nm.map((w,i)=>i?`<i>${w}</i>`:w).join(' '));
-$('#tag').textContent=PROFILE.tag;$('#bio').textContent=PROFILE.bio;
-$('#stats').innerHTML=STATS.map(s=>`<div class="stat rv"><b data-n="${s[0]}" data-x="${s[1]}">0</b><span>${s[2]}</span></div>`).join('');
-$('#mq').innerHTML=[...MARQUEE,...MARQUEE,...MARQUEE,...MARQUEE].map((m,i)=>`<span class="${i%2?'f':''}">${m}</span>`).join('');
-$('#mq2').innerHTML=[...MARQUEE,...MARQUEE,...MARQUEE,...MARQUEE].reverse().map((m,i)=>`<span class="${i%2?'':'f'}">${m}</span>`).join('');
-$('#stmt').innerHTML=PROFILE.statement.split(' ').map(w=>`<span class="sw${PROFILE.statementGold.includes(w)?' g':''}">${w}</span>`).join(' ');
 const hb='<i class="hb a"></i><i class="hb b"></i><i class="hb c"></i><i class="hb d"></i>';
-$('#svc').innerHTML=SERVICES.map((s,i)=>`<div class="card tilt rv" style="transition-delay:${(i%4)*.08}s">${hb}<div class="n">0${i+1}</div><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join('');
-$('#cls').innerHTML=CLIENTS.map((c,i)=>`<div class="card cl tilt rv" style="--ac:${c.ac};transition-delay:${i*.1}s">${hb}<div class="av ${c.logo?'lg':''} ${c.full?'full':''}">${c.logo?`<img src="${c.logo}" alt="${c.name}">`:c.ini}</div><h3>${c.name}</h3><div class="hd">@${c.handle}</div><div class="kind">${c.kind}</div><div class="nums"><div><b>${c.fol}</b>Followers</div><div><b>${c.posts}</b>Posts</div></div><div class="tags">${TAGS.map(t=>`<span>${t}</span>`).join('')}</div><a class="btn s mag" href="https://instagram.com/${c.handle}" target="_blank" rel="noopener">Open account</a></div>`).join('');
-$('#projs').innerHTML=BIZ.map((b,i)=>`<div class="card proj tilt rv" style="transition-delay:${i*.12}s">${hb}<div class="top"><span class="ic">${b.ic}</span><span class="live">${b.status}</span></div><h3>${b.title}</h3><div class="pb">THE PROBLEM</div><p>${b.problem}</p><div class="pb">THE SOLUTION</div><p>${b.desc}</p><ul>${b.feats.map(f=>`<li>${f}</li>`).join('')}</ul><a class="btn p mag" href="${b.link}" target="_blank" rel="noopener">${b.linkText}</a></div>`).join('');
-$('#pods').innerHTML=PODCASTS.map((p,i)=>`<div class="pod rv" data-cur="PLAY" style="transition-delay:${(i%3)*.08}s"><div class="m"><video src="media/videos/${p.n}.mp4" poster="media/videos/${p.n}.jpg" playsinline preload="metadata"></video><div class="pl"><i>▶</i></div></div><div class="t"><small>${p.tag}</small><h4>${p.title}</h4></div></div>`).join('');
-$$('.pod').forEach(el=>{const v=el.querySelector('video');el.onclick=()=>{if(v.paused){$$('.pod video').forEach(o=>{if(o!==v){o.pause();o.closest('.pod').classList.remove('on')}});v.play();el.classList.add('on')}else{v.pause();el.classList.remove('on')}};v.onended=()=>el.classList.remove('on')});
-const pcats=[ALL,...new Set(PHOTOS.map(p=>p[2]))];
-$('#pfilters').innerHTML=pcats.map((c,i)=>`<button class="${i?'':'on'}" data-c="${c}">${c}</button>`).join('');
-function drawPh(c){$('#photos').innerHTML=PHOTOS.filter(p=>c===ALL||p[2]===c).map((p,i)=>`<div class="ph pop" data-cur="ZOOM" style="--i:${i%8}"><img src="media/photos/ph${p[0]}.jpg" alt="${p[1]}" loading="lazy"><span>${p[1]}</span></div>`).join('');
- $$('.ph').forEach(el=>el.onclick=()=>{$('#lb img').src=el.querySelector('img').src;$('#lb').classList.add('on')})}
-$('#pfilters').onclick=e=>{if(e.target.dataset.c){$$('#pfilters button').forEach(b=>b.classList.remove('on'));e.target.classList.add('on');drawPh(e.target.dataset.c)}};
-drawPh(ALL);
-/* menu stories */
-const MENU_STRIPS=[["overview","Drinks and hot dishes"],["meat","Local meat"],["grills","Grills"],["drinks3","Drinks"]];
-const MENU_SINGLES=[["fries","Fries"],["hummus","Hummus"],["alfahsa","Alfahsa"],["salta","Salta"],["madhbi","Madhbi chicken"],["madfoon","Madfoon chicken"],["boorma","Lamb boorma"],["sambosa","Sambosa"]];
-$('#strips').innerHTML=`<div class="sx rv" data-cur="ZOOM"><img src="media/menu/${MENU_STRIPS[0][0]}.jpg" alt="${MENU_STRIPS[0][1]}" loading="lazy"><span>${MENU_STRIPS[0][1].toUpperCase()}</span></div>`+MENU_STRIPS.slice(1,3).map(s=>`<div class="sx rv" data-cur="ZOOM"><img src="media/menu/${s[0]}.jpg" alt="${s[1]}" loading="lazy"><span>${s[1].toUpperCase()}</span></div>`).join('');
-$('#msing').innerHTML=MENU_SINGLES.map(s=>`<div class="sg rv" data-cur="ZOOM"><img src="media/menu/${s[0]}.jpg" alt="${s[1]}" loading="lazy"></div>`).join('');
-$$('.sx img,.sg img').forEach(im=>im.parentElement.onclick=()=>{$('#lb img').src=im.src;$('#lb').classList.add('on')});
-{const mv=$('.mvid video');$('.mvid').onmouseenter=()=>mv.play();$('.mvid').onmouseleave=()=>{mv.pause();mv.currentTime=0}}
-$('#lb').onclick=()=>$('#lb').classList.remove('on');
-addEventListener('keydown',e=>{if(e.key==='Escape')$('#lb').classList.remove('on')});
-$('#steps').insertAdjacentHTML('beforeend',STEPS.map(s=>`<div class="step"><b>${s[0]}</b><h3>${s[1]}</h3><p>${s[2]}</p></div>`).join(''));
-$$('.split').forEach(h=>kinetic(h));
-const cats=[ALL,...new Set(WORKS.map(w=>w.cat))];
-$('#filters').innerHTML=cats.map((c,i)=>`<button class="${i?'':'on'}" data-c="${c}">${c}</button>`).join('');
+
+/* ---- per-client colour theme ---- */
+const TH={gold:[212,175,55],md:[138,31,61],fp:[196,22,28],as:[29,79,168],dx:[163,33,63],td:[47,111,219]};
+const CT={'Factory Price':'fp','Al Satari':'as','Mandi Al Deera':'md','Al Deera Express':'dx','Tadawul':'td'};
+let thCur=[...TH.gold],thTgt=TH.gold,thA=.1,thAt=.1,hoverT=null,lastTS='';
 let showAll=false,curCat=ALL;
+function secTheme(){const mid=innerHeight*.5;
+ for(const [id,fn] of [['works',()=>CT[curCat]||'gold'],['shoot',()=>'md'],['menu',()=>'md']]){
+  const r=$('#'+id).getBoundingClientRect();if(r.top<mid&&r.bottom>mid)return fn()}
+ return 'gold'}
+function pickTheme(){const k=hoverT||secTheme();thTgt=TH[k];thAt=k==='gold'?.10:.32}
+function stepTheme(){for(let i=0;i<3;i++)thCur[i]+=(thTgt[i]-thCur[i])*.06;thA+=(thAt-thA)*.06;
+ const s=thCur.map(v=>v|0).join(',')+'|'+thA.toFixed(3);
+ if(s!==lastTS){lastTS=s;const st=document.documentElement.style;st.setProperty('--t',thCur.map(v=>v|0).join(','));st.setProperty('--ta',thA.toFixed(3))}}
+
+/* ---- kinetic text: words > characters (Arabic = whole words so letters keep joining), <i> = gold ---- */
+function kinetic(el,html,forceEn){const words=LANG==='ar'&&!forceEn;let g=false,i=0;const out=[];const src=html||el.innerHTML;
+  src.split(/(<i>|<\/i>|\s+)/).forEach(t=>{if(t==='<i>')g=true;else if(t==='</i>')g=false;else if(t&&t.trim()){
+    const inner=words?`<span class="ch${g?' g':''}" style="--i:${i++}">${t}</span>`:[...t].map(c=>`<span class="ch${g?' g':''}" style="--i:${i++}">${c}</span>`).join('');
+    out.push(`<span class="wd">${inner}</span>`)}});
+  el.innerHTML=out.join('');el.setAttribute('aria-label',src.replace(/<[^>]+>/g,''))}
+function applyI18n(){$$('[data-i18n]').forEach(el=>{const k=el.dataset.i18n,v=UI[LANG][k];if(v==null)return;el.innerHTML=v;if(el.classList.contains('split'))kinetic(el)})}
+
+/* ---- dynamic content ---- */
+function buildAll(){
+  $('#tag').textContent=tr(PROF.tag);$('#bio').textContent=tr(PROF.bio);
+  const gold=tr(PROF.gold);$('#stmt').innerHTML=tr(PROF.statement).split(' ').map(w=>`<span class="sw${gold.includes(w)?' g':''}">${w}</span>`).join(' ');
+  const stats=[[CLIENTS.length,""],[WORKS.length,""],[PODCASTS.length,""],[BIZ.length,""]];
+  $('#stats').innerHTML=stats.map((s,i)=>`<div class="stat rv"><b data-n="${s[0]}" data-x="${s[1]}">${document.body.classList.contains('loaded')?s[0]:0}</b><span>${tr(STAT_LABELS[i])}</span></div>`).join('');
+  $('#svc').innerHTML=SERVICES.map((s,i)=>`<div class="card tilt rv" style="transition-delay:${(i%4)*.08}s">${hb}<div class="n">0${i+1}</div><h3>${tr(s[0])}</h3><p>${tr(s[1])}</p></div>`).join('');
+  $('#cls').innerHTML=CLIENTS.map((c,i)=>`<div class="card cl tilt rv" data-th="${c.th}" style="--ac:${c.ac};transition-delay:${i*.1}s">${hb}<div class="av ${c.logo?'lg':''} ${c.full?'full':''}">${c.logo?`<img src="${c.logo}" alt="${tr(c.name)}">`:c.ini}</div><h3>${tr(c.name)}</h3><div class="hd">@${c.handle}</div><div class="kind">${tr(c.kind)}</div><div class="nums"><div><b>${c.fol}</b>${U('followers')}</div><div><b>${c.posts}</b>${U('posts')}</div></div><div class="tags">${TAGS.map(t=>`<span>${tr(t)}</span>`).join('')}</div><a class="btn s mag" href="https://instagram.com/${c.handle}" target="_blank" rel="noopener">${U('open')}</a></div>`).join('');
+  $$('.cl').forEach(el=>{el.addEventListener('mouseenter',()=>{hoverT=el.dataset.th;pickTheme()});el.addEventListener('mouseleave',()=>{hoverT=null;pickTheme()})});
+  $('#projs').innerHTML=BIZ.map((b,i)=>`<div class="card proj tilt rv" style="transition-delay:${i*.12}s">${hb}<div class="top"><span class="ic">${b.ic}</span><span class="live">${b.status}</span></div><h3>${tr(b.title)}</h3><div class="pb">${U('problem')}</div><p>${tr(b.problem)}</p><div class="pb">${U('solution')}</div><p>${tr(b.desc)}</p><ul>${b.feats.map(f=>`<li>${tr(f)}</li>`).join('')}</ul><a class="btn p mag" href="${b.link}" target="_blank" rel="noopener">${tr(b.linkText)}</a></div>`).join('');
+  $('#flow').innerHTML=FLOW.map(f=>`<span>${tr(f)}</span>`).join(`<i>${U('arrow')}</i>`);
+  $('#pods').innerHTML=PODCASTS.map((p,i)=>`<div class="pod rv" data-cur="PLAY" style="transition-delay:${(i%3)*.08}s"><div class="m"><video src="media/videos/${p.n}.mp4" poster="media/videos/${p.n}.jpg" playsinline preload="metadata"></video><div class="pl"><i>▶</i></div></div><div class="t"><small>${tr(p.tag)}</small><h4>${tr(p.title)}</h4></div></div>`).join('');
+  $$('.pod').forEach(el=>{const v=el.querySelector('video');el.onclick=()=>{if(v.paused){$$('.pod video').forEach(o=>{if(o!==v){o.pause();o.closest('.pod').classList.remove('on')}});v.play();el.classList.add('on')}else{v.pause();el.classList.remove('on')}};v.onended=()=>el.classList.remove('on')});
+  const pc=[ALL,...new Set(PHOTOS.map(p=>p[3]))];
+  $('#pfilters').innerHTML=pc.map((c,i)=>`<button class="${c===curPh?'on':''}" data-c="${c}">${c===ALL?(LANG==='ar'?CATL.All:'All'):catL(c)}</button>`).join('');
+  drawPh(curPh);
+  $('#strips').innerHTML=MENU_STRIPS.map(s=>`<div class="sx rv" data-cur="ZOOM"><img src="media/menu/${s[0]}.jpg" alt="${tr(s[1])}" loading="lazy"><span>${LANG==='ar'?tr(s[1]):tr(s[1]).toUpperCase()}</span></div>`).join('');
+  $('#msing').innerHTML=MENU_SINGLES.map(s=>`<div class="sg rv" data-cur="ZOOM"><img src="media/menu/${s[0]}.jpg" alt="${tr(s[1])}" loading="lazy"></div>`).join('');
+  $$('.sx img,.sg img').forEach(im=>im.parentElement.onclick=()=>{$('#lb img').src=im.src;$('#lb').classList.add('on')});
+  $('#steps').innerHTML='<div class="ln" id="sln"></div>'+STEPS.map(s=>`<div class="step"><b>${s[0]}</b><h3>${tr(s[1])}</h3><p>${tr(s[2])}</p></div>`).join('');
+  const cats=[ALL,...new Set(WORKS.map(w=>w.cat))];
+  $('#filters').innerHTML=cats.map(c=>`<button class="${c===curCat?'on':''}" data-c="${c}">${catL(c)}</button>`).join('');
+  draw(curCat);
+  $('#links').innerHTML=`<a class="btn p mag" href="${PROFILE.whatsapp}">${U('whatsapp')}</a>${PROFILE.instagram?`<a class="btn s mag" href="${PROFILE.instagram}">${U('instagram')} ${PROFILE.handle}</a>`:''}<a class="btn s mag" href="${PROFILE.email}">${U('email')}</a>`;
+  $('#foot').textContent='© '+new Date().getFullYear()+' '+PROFILE.name.toUpperCase();
+  $('#rec').textContent=raf?U('stop'):U('rec');
+  $('#lang').textContent=U('lang');
+}
+let curPh=ALL,raf=null;
+function drawPh(c){curPh=c;$('#photos').innerHTML=PHOTOS.filter(p=>c===ALL||p[3]===c).map((p,i)=>`<div class="ph pop" data-cur="ZOOM" style="--i:${i%8}"><img src="media/photos/ph${p[0]}.jpg" alt="${LANG==='ar'?p[2]:p[1]}" loading="lazy"><span>${LANG==='ar'?p[2]:p[1]}</span></div>`).join('');
+ $$('.ph').forEach(el=>el.onclick=()=>{$('#lb img').src=el.querySelector('img').src;$('#lb').classList.add('on')})}
 function draw(c){
   curCat=c;const list=WORKS.filter(w=>c===ALL||w.cat===c),LIM=9;
-  $('#more').style.display=list.length>LIM?'':'none';$('#more').textContent=showAll?'Show less':`Show more (${list.length-LIM}+)`;
+  $('#more').style.display=list.length>LIM?'':'none';$('#more').textContent=showAll?U('less'):`${U('more')} (${list.length-LIM}+)`;
   $('#grid').innerHTML=(showAll?list:list.slice(0,LIM)).map((w,i)=>{
-    const m=w.type==='video'?`<video src="${w.src}" ${w.poster?`poster="${w.poster}"`:''} muted loop playsinline preload="metadata"></video>`:`<img src="${w.src}" alt="${w.title}">`;
-    return `<div class="work tilt pop" data-cur="${w.type==='video'?'PLAY':'VIEW'}" style="--i:${i}">${hb}<div class="m ${w.type}" style="${w.ar?`aspect-ratio:${w.ar}`:''}">${m}</div><div class="t"><small>${w.cat}</small><h4>${w.title}</h4></div></div>`}).join('');
-  $$('.work').forEach(el=>{const v=el.querySelector('video');if(v){el.onmouseenter=()=>v.play();el.onmouseleave=()=>{v.pause();v.currentTime=0}}});
-  bindTilt();
+    const m=w.type==='video'?`<video src="${w.src}" ${w.poster?`poster="${w.poster}"`:''} muted loop playsinline preload="metadata"></video>`:`<img src="${w.src}" alt="${tr(w.title)}">`;
+    return `<div class="work tilt pop" data-cur="${w.type==='video'?'PLAY':'VIEW'}" data-th="${CT[w.cat]||'gold'}" style="--i:${i}">${hb}<div class="m ${w.type}" style="${w.asp?`aspect-ratio:${w.asp}`:''}">${m}</div><div class="t"><small>${catL(w.cat)}</small><h4>${tr(w.title)}</h4></div></div>`}).join('');
+  $$('.work').forEach(el=>{const v=el.querySelector('video');
+    el.addEventListener('mouseenter',()=>{hoverT=el.dataset.th;pickTheme();if(v)v.play()});
+    el.addEventListener('mouseleave',()=>{hoverT=null;pickTheme();if(v){v.pause();v.currentTime=0}})});
+  bindTilt();pickTheme();
 }
-$('#filters').onclick=e=>{if(e.target.dataset.c){$$('#filters button').forEach(b=>b.classList.remove('on'));e.target.classList.add('on');showAll=false;draw(e.target.dataset.c)}};
-$('#more').onclick=()=>{showAll=!showAll;draw(curCat)};
-$('#links').innerHTML=`<a class="btn p mag" href="${PROFILE.whatsapp}">WhatsApp</a>${PROFILE.instagram?`<a class="btn s mag" href="${PROFILE.instagram}">Instagram ${PROFILE.handle}</a>`:''}<a class="btn s mag" href="${PROFILE.email}">Email</a>`;
-$('#foot').textContent='© '+new Date().getFullYear()+' '+PROFILE.name.toUpperCase();
+
+/* ---- language switch ---- */
+function setLang(l,first){LANG=l;try{localStorage.setItem('lang',l)}catch(e){}
+  document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';
+  applyI18n();buildAll();bindTilt();mag();observe();if(!first)onScroll()}
 
 /* reveal on scroll, counters, text scramble */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const t=e.target;t.classList.add('in');io.unobserve(t);
@@ -560,12 +642,25 @@ function count(el){const n=+el.dataset.n,x=el.dataset.x,t0=performance.now();
 function scramble(el){const fin=el.dataset.fin||(el.dataset.fin=el.textContent),set='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',t0=performance.now();
   (function f(t){const p=Math.min(1,(t-t0)/900);el.textContent=[...fin].map((c,i)=>c===' '||i<p*fin.length?c:set[Math.random()*set.length|0]).join('');if(p<1)requestAnimationFrame(f)})(t0)}
 
+/* static one-time setup */
+$('#logo').textContent='HS';
+{const nm=PROFILE.name.split(' ');kinetic($('#name'),nm.map((w,i)=>i?`<i>${w}</i>`:w).join(' '),true)}
+$('#mq').innerHTML=[...MARQUEE,...MARQUEE,...MARQUEE,...MARQUEE].map((m,i)=>`<span class="${i%2?'f':''}">${m}</span>`).join('');
+$('#mq2').innerHTML=[...MARQUEE,...MARQUEE,...MARQUEE,...MARQUEE].reverse().map((m,i)=>`<span class="${i%2?'':'f'}">${m}</span>`).join('');
+$('#filters').onclick=e=>{if(e.target.dataset.c){$$('#filters button').forEach(b=>b.classList.remove('on'));e.target.classList.add('on');showAll=false;draw(e.target.dataset.c)}};
+$('#pfilters').onclick=e=>{if(e.target.dataset.c){$$('#pfilters button').forEach(b=>b.classList.remove('on'));e.target.classList.add('on');drawPh(e.target.dataset.c)}};
+$('#more').onclick=()=>{showAll=!showAll;draw(curCat)};
+$('#lb').onclick=()=>$('#lb').classList.remove('on');
+addEventListener('keydown',e=>{if(e.key==='Escape')$('#lb').classList.remove('on')});
+{const mv=$('.mvid video');$('.mvid').onmouseenter=()=>mv.play();$('.mvid').onmouseleave=()=>{mv.pause();mv.currentTime=0}}
+$('#lang').onclick=()=>setLang(LANG==='ar'?'en':'ar');
+
 /* typed roles */
 (function type(){let i=0,j=0,del=false;const el=$('#role');
- (function tick(){const w=PROFILE.roles[i];el.textContent=w.slice(0,j);
-  if(!del&&j===w.length){del=true;return setTimeout(tick,1400)}
-  if(del&&j===0){del=false;i=(i+1)%PROFILE.roles.length}
-  j+=del?-1:1;setTimeout(tick,del?35:70)})()})();
+ (function tick(){const roles=PROF.roles,w=tr(roles[i%roles.length]);el.textContent=w.slice(0,j);
+  if(!del&&j>=w.length){del=true;return setTimeout(tick,1400)}
+  if(del&&j<=0){del=false;i=(i+1)%roles.length}
+  j+=del?-1:1;setTimeout(tick,del?35:LANG==='ar'?95:70)})()})();
 
 /* custom cursor with context label */
 let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
@@ -587,16 +682,17 @@ $('#pw').onmouseleave=()=>{const p=$('#phones').style;p.setProperty('--ry','0deg
 /* magnetic buttons */
 function mag(){$$('.mag').forEach(b=>{b.onmousemove=e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.3}px,${(e.clientY-r.top-r.height/2)*.4}px)`};b.onmouseleave=()=>b.style.transform=''})}
 
-/* connected-stars background */
+/* connected-stars background (colour follows the active client theme) */
 (function(){const c=$('#bg'),x=c.getContext('2d');let W,H,P=[];
  const init=()=>{W=c.width=innerWidth;H=c.height=innerHeight;P=Array.from({length:Math.min(110,W*H/14000|0)},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.4}))};
  init();addEventListener('resize',init);
  (function f(){x.clearRect(0,0,W,H);
+  const L=thCur.map(v=>v+(255-v)*.45|0),B=thCur.map(v=>v|0);
   for(const p of P){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
    const dx=p.x-mx,dy=p.y-my,d=Math.hypot(dx,dy);if(d<140){p.x+=dx/d*1.4;p.y+=dy/d*1.4}
-   x.fillStyle='rgba(243,215,122,.8)';x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fill()}
-  for(let i=0;i<P.length;i++){for(let j=i+1;j<P.length;j++){const d=Math.hypot(P[i].x-P[j].x,P[i].y-P[j].y);if(d<130){x.strokeStyle=`rgba(212,175,55,${.22*(1-d/130)})`;x.lineWidth=.6;x.beginPath();x.moveTo(P[i].x,P[i].y);x.lineTo(P[j].x,P[j].y);x.stroke()}}
-   const d=Math.hypot(P[i].x-mx,P[i].y-my);if(d<190){x.strokeStyle=`rgba(243,215,122,${.5*(1-d/190)})`;x.beginPath();x.moveTo(P[i].x,P[i].y);x.lineTo(mx,my);x.stroke()}}
+   x.fillStyle=`rgba(${L},.8)`;x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fill()}
+  for(let i=0;i<P.length;i++){for(let j=i+1;j<P.length;j++){const d=Math.hypot(P[i].x-P[j].x,P[i].y-P[j].y);if(d<130){x.strokeStyle=`rgba(${B},${.22*(1-d/130)})`;x.lineWidth=.6;x.beginPath();x.moveTo(P[i].x,P[i].y);x.lineTo(P[j].x,P[j].y);x.stroke()}}
+   const d=Math.hypot(P[i].x-mx,P[i].y-my);if(d<190){x.strokeStyle=`rgba(${L},${.5*(1-d/190)})`;x.beginPath();x.moveTo(P[i].x,P[i].y);x.lineTo(mx,my);x.stroke()}}
   requestAnimationFrame(f)})()})();
 
 /* gold spark trail */
@@ -608,8 +704,8 @@ function mag(){$$('.mag').forEach(b=>{b.onmousemove=e=>{const r=b.getBoundingCli
   S=S.filter(p=>p.l>0);for(const p of S){p.x+=p.vx;p.y+=p.vy;p.vy+=.03;p.l-=.022;x.fillStyle=`rgba(243,${180+p.l*40|0},${60+p.l*50|0},${p.l*.9})`;x.beginPath();x.arc(p.x,p.y,p.r*p.l+.3,0,7);x.fill()}
   requestAnimationFrame(f)})()})();
 
-/* scroll effects: progress, parallax, statement fill, process line, marquee */
-let lastY=0,mqx=0;
+/* scroll effects: progress, parallax, showreel zoom, statement fill, process line, marquee, theme */
+let lastY=0,mqx=0,fc=0;
 function onScroll(){const y=scrollY,max=document.documentElement.scrollHeight-innerHeight;
  $('#prog').style.transform=`scaleX(${y/max})`;
  $('#nav').classList.toggle('hide',y>lastY&&y>300);
@@ -619,32 +715,30 @@ function onScroll(){const y=scrollY,max=document.documentElement.scrollHeight-in
  const st=$('#steps').getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.75-st.top)/(st.height+120)));
  $('#sln').style.width=(p*88)+'%';$$('.step').forEach((s,i)=>s.classList.toggle('on',p>(i/STEPS.length)*.9+.02));
  $$('.work .m').forEach(m=>{const r=m.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){m.style.setProperty('--py',((r.top+r.height/2-innerHeight/2)*-.06)+'px')}});
- /* showreel zoom-through-text */
  const rl=$('#reel').getBoundingClientRect(),rp=Math.min(1,Math.max(0,-rl.top/(rl.height-innerHeight)));
  const zp=Math.min(1,rp/.78),ez=zp*zp*(3-2*zp);
  $('#reelT').style.setProperty('--s',Math.exp(Math.log(34)*ez).toFixed(3));
  $('#reelMask').style.opacity=rp<.78?1:Math.max(0,1-(rp-.78)/.14);
  $('#reelLab').style.opacity=rp<.06?1:0;
  $('#reelCap').classList.toggle('on',rp>.8);$('#reelShade').classList.toggle('on',rp>.8);
- /* hero scroll parallax */
  const hp=Math.min(1,y/innerHeight);
  $('#pw').style.translate=`0 ${-hp*80}px`;$('#pw').style.scale=1-hp*.1;
  $('.hero .wrap>div').style.transform=`translateY(${hp*70}px)`;$('.hero .wrap>div').style.opacity=1-hp*1.25;
+ pickTheme();
  mqx-=Math.abs(y-lastY)*.8;
  lastY=y}
 addEventListener('scroll',onScroll,{passive:true});
-(function loop(){mqx-=.6;const w=$('#mq').scrollWidth/4;$('#mq').style.transform=`translateX(${(mqx%w)}px)`;$('#mq2').style.transform=`translateX(${-(mqx%w)-w}px)`;requestAnimationFrame(loop)})();
+(function loop(){mqx-=.6;const w=$('#mq').scrollWidth/4;$('#mq').style.transform=`translateX(${(mqx%w)}px)`;$('#mq2').style.transform=`translateX(${-(mqx%w)-w}px)`;if((fc++%6)===0)pickTheme();stepTheme();requestAnimationFrame(loop)})();
 
 /* cinematic loader */
-let n=0;const ti=setInterval(()=>{n+=Math.random()*8+3;if(n>=100){n=100;clearInterval(ti);setTimeout(()=>{$('#ld').classList.add('out');document.body.classList.remove('lock');setTimeout(()=>{$$('.hero').forEach(h=>h.classList.add('go'));observe()},500);setTimeout(()=>$('#ld').classList.add('gone'),1500)},400)}
+let n=0;const ti=setInterval(()=>{n+=Math.random()*8+3;if(n>=100){n=100;clearInterval(ti);setTimeout(()=>{$('#ld').classList.add('out');document.body.classList.remove('lock');document.body.classList.add('loaded');setTimeout(()=>{$$('.hero').forEach(h=>h.classList.add('go'));observe()},500);setTimeout(()=>$('#ld').classList.add('gone'),1500)},400)}
  $('#ldn').textContent=Math.floor(n);$('#ldb').style.width=n+'%'},55);
-draw(ALL);mag();
+setLang(LANG,true);
 
 /* record mode */
-let raf=null;
 $('#rec').onclick=()=>{
-  if(raf){cancelAnimationFrame(raf);raf=null;document.body.classList.remove('rec');$('#rec').textContent='▶ RECORD MODE';return}
-  document.body.classList.add('rec');$('#rec').textContent='■ STOP';scrollTo(0,0);
+  if(raf){cancelAnimationFrame(raf);raf=null;document.body.classList.remove('rec');$('#rec').textContent=U('rec');return}
+  document.body.classList.add('rec');$('#rec').textContent=U('stop');scrollTo(0,0);
   let y=0;const step=()=>{y+=1.1;scrollTo(0,y);if(y>=document.documentElement.scrollHeight-innerHeight){raf=null;return}raf=requestAnimationFrame(step)};
   setTimeout(()=>{raf=requestAnimationFrame(step)},1500);
 };
